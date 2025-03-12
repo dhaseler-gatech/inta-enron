@@ -18,6 +18,10 @@ This is a group project aimed at finding evidence of wrongdoing in the Enron dat
 
 ## Running the Project
 
+Install the required packages
+```bash
+pip3 install -r requirements.txt
+
 To run the project, simply execute the `main.py` script:
 ```bash
-python main.py
+python3 main.py
