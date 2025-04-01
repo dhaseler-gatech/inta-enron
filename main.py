@@ -80,7 +80,22 @@ def create_dataframe(document_type='all_documents'):
     print(f"Saved DataFrame to {csv_file}")
     return df
 
+def filter_df_on_keyword(df, keyword, label='Body'):
+    return df[df[label].str.contains(keyword, case=False, na=False)]
+
+# extract dataset from zip if not previously done
 extract_enron_dataset()
+# create dataframes from extracted dataset if not already done
 all_documents_df = create_dataframe(document_type='all_documents')
 sent_items_df = create_dataframe(document_type='sent')
 deleted_items_df = create_dataframe(document_type='deleted_items')
+
+# filter on specific keywords/terms
+emails_with_special_purpose_entities = filter_df_on_keyword(df=all_documents_df, keyword='special purpose entities')
+emails_with_SPE = filter_df_on_keyword(df=all_documents_df, keyword=' SPE ')
+emails_with_adjust_the_numbers = filter_df_on_keyword(df=all_documents_df, keyword='adjust the numbers')
+
+# filter based on people
+all_documents_df_skilling = filter_df_on_keyword(all_documents_df, keyword='skilling-j', label='Person')
+
+print("Done")
