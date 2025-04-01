@@ -98,4 +98,10 @@ emails_with_adjust_the_numbers = filter_df_on_keyword(df=all_documents_df, keywo
 # filter based on people
 all_documents_df_skilling = filter_df_on_keyword(all_documents_df, keyword='skilling-j', label='Person')
 
+# Next step: change it to filter on a list of people and list of keywords
+# Requires having the list of keywords and list of people
+
+# Following step: plug output into some sort of LLM / sentiment analysis
+
+
 print("Done")
