@@ -2,6 +2,8 @@ import os
 import tarfile
 import pandas as pd
 import re
+from textblob import TextBlob
+from transformers import pipeline
 
 def extract_enron_dataset():
     unzipped_folder = 'Enron_dataset'
@@ -83,6 +85,14 @@ def create_dataframe(document_type='all_documents'):
 def filter_df_on_keyword(df, keyword, label='Body'):
     return df[df[label].str.contains(keyword, case=False, na=False)]
 
+def filter_df_on_keywords(df, keywords, label='Body'):
+    pattern = '|'.join(map(re.escape, keywords))  # escape special characters
+    return df[df[label].str.contains(pattern, case=False, na=False)]
+
+
+def analyze_sentiment(text):
+    return TextBlob(text).sentiment.polarity
+
 # extract dataset from zip if not previously done
 extract_enron_dataset()
 # create dataframes from extracted dataset if not already done
@@ -91,12 +101,36 @@ sent_items_df = create_dataframe(document_type='sent')
 deleted_items_df = create_dataframe(document_type='deleted_items')
 
 # filter on specific keywords/terms
-emails_with_special_purpose_entities = filter_df_on_keyword(df=all_documents_df, keyword='special purpose entities')
-emails_with_SPE = filter_df_on_keyword(df=all_documents_df, keyword=' SPE ')
-emails_with_adjust_the_numbers = filter_df_on_keyword(df=all_documents_df, keyword='adjust the numbers')
+#key_players = ['Lay', 'Skilling', 'Fastow', 'Watkins', 'Pai', 'Davis', 'Kinder']
+keywords = ['special purpose entities', ' SPE ', 'adjust the numbers', 'death star', 'fat boy', 'richochet', 'congestion fee',
+            'breach of contract', 'non-compliance', 'regulatory violation', 'insider trading', 'embezzlement',
+            'kickback', 'board conflict', 'market-to-market', 'whistleblower', 'off the books', 'off-balance-sheet',
+            'look the other way', 'adjust the price']
+
+#filtered_on_people = filter_df_on_keywords(df=all_documents_df, keywords=key_players, label='Person')
+#filtered_df = filter_df_on_keywords(df=filtered_on_people, keywords=keywords)
+filtered_df = filter_df_on_keywords(df=all_documents_df, keywords=keywords)
+filtered_df = filtered_df.copy()
+filtered_df['Sentiment'] = filtered_df['Body'].apply(analyze_sentiment)
+
+# Show top 20 most negative entries
+top_negative = filtered_df.sort_values(by='Sentiment').head(100)
+
+# zero shot classification: corporate wrongdoing
+classifier = pipeline("zero-shot-classification", model="facebook/bart-large-mnli")
+#candidate_labels = ["corporate wrongdoing", "legal risk", "regulatory compliance", "safe", "neutral"]
+candidate_labels = ["criminal wrongdoing", 'fraud', "safe", "neutral"]
+top_negative['Prediction_Category'] = top_negative['Body'].apply(lambda text: classifier(text, candidate_labels)['labels'][0])
+
+# Example usage
+for i, row in top_negative.iterrows():
+    if row['Prediction_Category'] not in ['safe','neutral']:
+        print(f"\n--- Entry {i} ---")
+        print(row['Body'])
+        print("Prediction:", row['Prediction_Category'], "→ sentiment:", row['Sentiment'])
 
 # filter based on people
-all_documents_df_skilling = filter_df_on_keyword(all_documents_df, keyword='skilling-j', label='Person')
+#all_documents_df_skilling = filter_df_on_keyword(all_documents_df, keyword='skilling-j', label='Person')
 
 # Next step: change it to filter on a list of people and list of keywords
 # Requires having the list of keywords and list of people
