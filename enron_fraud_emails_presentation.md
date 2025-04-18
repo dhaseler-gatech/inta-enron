@@ -4,7 +4,6 @@ This document contains five key emails that provide direct evidence of Enron's f
 
 ## Email #1: JEDI II and Special Purpose Entities
 
-**Email ID:** Not visible in excerpt  
 **Date:** Mon, 16 Apr 2001 12:05:00 -0700 (PDT)  
 **From:** travis.mccullough@enron.com  
 **To:** alan.aronowitz@enron.com, peggy.banczak@enron.com, sandi.braband@enron.com  
@@ -39,7 +38,6 @@ Hawaii -- Gareth Bahlmann
 
 ## Email #2: Raptor SPE and JEDI Manipulation
 
-**Email ID:** Not visible in excerpt  
 **Date:** Thu, 11 May 2000 07:32:00 -0700 (PDT)  
 **From:** david.delainey@enron.com (Key Executive)  
 **To:** mike.jakubik@enron.com  
@@ -79,7 +77,6 @@ closin. If this does not answer your question, let me know.    Mike
 
 ## Email #3: Off-Balance Sheet Financing
 
-**Email ID:** Not visible in excerpt  
 **Date:** Wed, 13 Dec 2000 02:54:00 -0800 (PST)  
 **From:** laura.luce@enron.com  
 **To:** edie.leschber@enron.com  
@@ -127,7 +124,6 @@ $25MM.
 
 ## Email #4: IBJ ISDA Master Agreement and Credit Support Annex
 
-**Email ID:** Not visible in excerpt  
 **Date:** Tue, 26 Sep 2000 03:06:00 -0700 (PDT)  
 **From:** jonathan.whitehead@enron.com  
 **To:** john.suttle@enron.com  
