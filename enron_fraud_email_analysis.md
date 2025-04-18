@@ -172,7 +172,7 @@ This email is highly significant because:
 4. It reveals concerns about asset values and potential write-downs
 5. It demonstrates the interconnected nature of Enron's SPEs (Raptor and JEDI)
 
-## How These Emails Answer Project Questions
+## Emails -> Project Questions
 
 ### 1. Definition of Wrongdoing
 
