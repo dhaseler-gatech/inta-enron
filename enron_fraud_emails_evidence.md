@@ -3,6 +3,7 @@
 This file contains the 5 most significant emails providing evidence of Enron's financial fraud, specifically related to Special Purpose Entities (SPEs), off-balance-sheet financing, and accounting manipulation.
 
 EMAIL #1: JEDI II and Special Purpose Entities
+Email ID: <5505493.1075842785081.JavaMail.evans@thyme>
 From: travis.mccullough@enron.com
 To: alan.aronowitz@enron.com, peggy.banczak@enron.com, sandi.braband@enron.com
 Date: Mon, 16 Apr 2001 12:05:00 -0700 (PDT)
@@ -40,6 +41,7 @@ Hawaii -- Gareth Bahlmann
 --------------------------------------------------------------------------------
 
 EMAIL #2: Raptor SPE and JEDI Manipulation
+Email ID: <17393106.1075854445452.JavaMail.evans@thyme>
 From: david.delainey@enron.com
 To: mike.jakubik@enron.com
 Date: Thu, 11 May 2000 07:32:00 -0700 (PDT)
@@ -83,6 +85,7 @@ closin. If this does not answer your question, let me know.    Mike
 --------------------------------------------------------------------------------
 
 EMAIL #3: Off-Balance Sheet Financing
+Email ID: <8427917.1075854428421.JavaMail.evans@thyme>
 From: laura.luce@enron.com
 To: edie.leschber@enron.com
 Date: Wed, 13 Dec 2000 02:54:00 -0800 (PST)
@@ -133,6 +136,7 @@ $25MM.
 --------------------------------------------------------------------------------
 
 EMAIL #4: IBJ ISDA Master Agreement
+Email ID: <4038441.1075859959028.JavaMail.evans@thyme>
 From: jonathan.whitehead@enron.com
 To: john.suttle@enron.com
 Date: Tue, 26 Sep 2000 03:06:00 -0700 (PDT)
@@ -173,12 +177,12 @@ not want to enter into a CSA with a non-financial institution.
 --------------------------------------------------------------------------------
 
 EMAIL #5: Devil's Tower and Off-Balance Sheet Issues
+Email ID: <29507026.1075854435095.JavaMail.evans@thyme>
 From: david.delainey@enron.com
 To: joseph.deffner@enron.com
 Date: Tue, 3 Oct 2000 06:24:00 -0700 (PDT)
 Subject: Re: Devil's Tower
 Fraud Score: 81.6
-Email ID: 29507026.1075854435095.JavaMail.evans@thyme
 
 ANALYSIS:
 - Contains SPE references: spe, special purpose

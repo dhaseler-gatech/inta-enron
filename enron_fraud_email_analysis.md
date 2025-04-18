@@ -15,7 +15,9 @@ The emails we've identified provide direct evidence of these fraudulent mechanis
 
 ## Email #1: JEDI II and Merchant Assets
 
+**Email ID**: <5505493.1075842785081.JavaMail.evans@thyme>  
 **From**: travis.mccullough@enron.com  
+**To**: alan.aronowitz@enron.com, peggy.banczak@enron.com, sandi.braband@enron.com  
 **Date**: Mon, 16 Apr 2001  
 **Subject**: Reminder re: JEDI II and Merchant Assets  
 **Fraud Score**: 84.6
@@ -50,6 +52,7 @@ This email is particularly significant because:
 
 ## Email #5: Devil's Tower and Off-Balance Sheet Issues
 
+**Email ID**: <29507026.1075854435095.JavaMail.evans@thyme>  
 **From**: david.delainey@enron.com  
 **To**: joseph.deffner@enron.com  
 **Date**: Tue, 3 Oct 2000  
@@ -81,6 +84,7 @@ This email is highly significant because:
 
 ## Email #3: Off-Balance Sheet Financing
 
+**Email ID**: <8427917.1075854428421.JavaMail.evans@thyme>  
 **From**: laura.luce@enron.com  
 **To**: edie.leschber@enron.com  
 **Date**: Wed, 13 Dec 2000  
@@ -113,6 +117,7 @@ This email is particularly significant because:
 
 ## Email #4: IBJ ISDA Master Agreement
 
+**Email ID**: <4038441.1075859959028.JavaMail.evans@thyme>  
 **From**: jonathan.whitehead@enron.com  
 **To**: john.suttle@enron.com  
 **Date**: Tue, 26 Sep 2000  
@@ -142,6 +147,7 @@ This email is significant because:
 
 ## Email #2: Raptor SPE and JEDI Manipulation
 
+**Email ID**: <17393106.1075854445452.JavaMail.evans@thyme>  
 **From**: david.delainey@enron.com  
 **To**: mike.jakubik@enron.com  
 **Date**: Thu, 11 May 2000  
