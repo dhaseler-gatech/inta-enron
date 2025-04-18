@@ -510,11 +510,11 @@ def main():
                 # Give higher priority to internal communications
                 if is_internal_enron:
                     final_top_emails = pd.concat([final_top_emails, pd.DataFrame([email])], ignore_index=True)
-                    if len(final_top_emails) >= 5:
+                    if len(final_top_emails) >= 15:
                         break
     
     # Second priority: Communications between key executives about sensitive topics
-    if len(final_top_emails) < 5:
+    if len(final_top_emails) < 15:
         print(f"  - Found {len(final_top_emails)} emails so far, looking for executive communications...")
         remaining = top_emails[~top_emails.index.isin(final_top_emails.index)]
         for _, email in remaining.iterrows():
@@ -575,11 +575,11 @@ def main():
             if (is_high_value_pair and has_smoking_gun) or \
                (from_exec and to_exec and any(spe in body.lower() for spe in ['ljm', 'raptor', 'spe', 'chewco'])):
                 final_top_emails = pd.concat([final_top_emails, pd.DataFrame([email])], ignore_index=True)
-                if len(final_top_emails) >= 5:
+                if len(final_top_emails) >= 15:
                     break
     
     # Third priority: Any internal Enron emails with high fraud scores
-    if len(final_top_emails) < 5:
+    if len(final_top_emails) < 15:
         print(f"  - Found {len(final_top_emails)} emails so far, looking for other internal emails with high fraud scores...")
         remaining = top_emails[~top_emails.index.isin(final_top_emails.index)]
         
@@ -595,11 +595,11 @@ def main():
         # Convert to DataFrame and take top emails
         if internal_emails:
             internal_df = pd.DataFrame(internal_emails)
-            needed = 5 - len(final_top_emails)
+            needed = 15 - len(final_top_emails)
             final_top_emails = pd.concat([final_top_emails, internal_df.head(needed)], ignore_index=True)
     
-    # Fourth priority: Any remaining high-scoring emails if we still don't have 5
-    if len(final_top_emails) < 5:
+    # Fourth priority: Any remaining high-scoring emails if we still don't have 15
+    if len(final_top_emails) < 15:
         print(f"  - Found {len(final_top_emails)} emails so far, adding remaining high-scoring emails...")
         remaining = top_emails[~top_emails.index.isin(final_top_emails.index)]
         
@@ -611,7 +611,7 @@ def main():
         
         if filtered_remaining:
             filtered_df = pd.DataFrame(filtered_remaining)
-            needed = 5 - len(final_top_emails)
+            needed = 15 - len(final_top_emails)
             final_top_emails = pd.concat([final_top_emails, filtered_df.head(needed)], ignore_index=True)
     
     # Save results
@@ -669,7 +669,7 @@ def main():
             f.write("-" * 80 + "\n\n")
     
     # Print results
-    print("\nTop 5 Most Suspicious Fraud-Related Emails:")
+    print("\nTop 15 Most Suspicious Fraud-Related Emails:")
     for i, (_, email) in enumerate(final_top_emails.iterrows(), 1):
         print(f"\n{i}. From: {email['From'] or 'Unknown'} | Date: {email['Date'] or 'Unknown'}")
         print(f"   Subject: {email['Subject'] or 'No Subject'}")
