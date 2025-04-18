@@ -3,5 +3,6 @@ all_documents.csv
 deleted_items.csv
 sent.csv
 top_fraud_emails.csv
+fraud_email_analysis.txt
 Enron_dataset/
 /advanced_forensics
